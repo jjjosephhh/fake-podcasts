@@ -2,12 +2,12 @@
 
 # Read the contents of input.txt into input_text
 company="aws"
-service="s3"
+service="direct-connect"
 prefix="${company}_${service}"
 #podcast="the-joe-rogan-experience"
 #podcast="this-american-life"
-#podcast="the-daily"
-podcast="lex-fridman"
+podcast="the-daily"
+#podcast="lex-fridman"
 input_text=$(cat "podcast_source/${prefix}_${podcast}.txt")
 # Use sed to expand out contractions
 input_text=$(echo "$input_text" | sed "s/can't/cannot/g; s/don't/do not/g; s/doesn't/does not/g; s/haven't/have not/g; s/i'm/i am/g; s/isn't/is not/g; s/it's/it is/g; s/let's/let us/g; s/shouldn't/should not/g; s/wasn't/was not/g; s/we'll/we will/g; s/we're/we are/g; s/we've/we have/g; s/what's/what is/g; s/who's/who is/g; s/won't/will not/g; s/you're/you are/g; s/you've/you have/g")
